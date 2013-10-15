@@ -25,20 +25,20 @@ Deployment to Heroku
 ---------------------
 
 
-Create a blank folder named tpavc
-git init
-git add .
-git commit -m " "
-
-git clone git@heroku.com:tpavc.git
-git remote add [remote name] git@heroku.com:tpavc.git
-git remote -v
-git fetch [remote name]
-git push [remote name] master
-
-heroku run rake
-heroku restart
-heroku open
+-	Create a blank folder named tpavc
+-	git init
+-	git add .
+-	git commit -m " "
+-	
+-	git clone git@heroku.com:tpavc.git
+-	git remote add [remote name] git@heroku.com:tpavc.git
+-	git remote -v
+-	git fetch [remote name]
+-	git push [remote name] master
+-	
+-	heroku run rake
+-	heroku restart
+-	heroku open
 
 
 
