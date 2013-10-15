@@ -1,0 +1,13 @@
+
+<%= form_tag("/search", :method => "post") do %>
+	<%= label_tag(:citizenship, "What is your citizenship?", :class => "label-forms") %>
+	<%= select_tag(:citizenship, options_for_select([ ['US Citizen', 'us-citizen'], ['Foreign Citizen', 'foreign-citizen'] ]), :class => "span3") %>
+
+	<%= label_tag(:state, "What state do you live in?", :class => "label-forms") %>
+	<%= select_tag(:state, options_for_select(State.order("name ASC").all.collect{ |u| [u.name, u.name.parameterize] }), :class => "span3") %>
+
+	<%= label_tag(:destination, "Where are you traveling?", :class => "label-forms") %>
+	<%= select_tag(:destination, options_for_select(Country.order("name ASC").all.collect{ |u| [u.name, u.id] }), :class => "span3") %>
+	<br />
+	<%= submit_tag("Find Visa Information", :class => "btn btn-primary  pull-right") %>
+<% end %>

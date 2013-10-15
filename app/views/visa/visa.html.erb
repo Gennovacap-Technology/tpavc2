@@ -1,0 +1,105 @@
+<%
+	active = nil
+	active_tourist, active_business, active_official, active_work, active_student = ''
+%>
+
+	<div class="span12 main-row-padding">
+		<div class="span11">
+			<h1 class="upper light-bold">EXPEDITED <span class="highlight"> VISAS</span> FOR <%= @country.name %></h1>
+			<h3>Listed below is all the information for a <span class="light-bold"><%= @citizenship %></span> to travel to <span class="light-bold"><%= @country.name %></span>. </h3>
+			<h4>Is the not the visa information you are looking for? <%= link_to "Search again", visas_path, :title => "Visas", :class => "highlight under" %>.</h4>
+		</div>
+		
+	</div>
+
+
+
+
+
+<div class="span12">	
+	<div class="span16 second-row-padding no-back">
+		<% if @visa_all == 0 %>
+			<div class="tab-content">
+				<h1>There's no visas for this country</h1>
+			</div>
+		<% else %>
+		<ul class="nav nav-tabs visa-main-margin" style="margin-bottom:-1px">
+			<% if @visa_tourist.any? %>
+				<% if active.nil? %>
+					<% active = true %>
+					<% active_tourist = 'active' %>
+				<% end %>
+				<li class="tab-head <%= active_tourist %>"><a href="#touristvisa"  data-toggle="tab">TOURIST VISA</a></li>
+			<% end %>
+			<% if @visa_business.any? %>
+				<% if active.nil? %>
+					<% active = true %>
+					<% active_business = 'active' %>
+				<% end %>
+				<li class="tab-head <%= active_business %>"><a href="#businessvisa"  data-toggle="tab">BUSINESS VISA</a></li>
+			<% end %>
+			<% if @visa_official.any? %>
+				<% if active.nil? %>
+					<% active = true %>
+					<% active_official = 'active' %>
+				<% end %>
+				<li class="tab-head <%= active_official %>"><a href="#officialvisa"  data-toggle="tab">OFFICIAL VISA</a></li>
+			<% end %>
+			<% if @visa_work.any? %>
+				<% if active.nil? %>
+					<% active = true %>
+					<% active_work = 'active' %>
+				<% end %>
+				<li class="tab-head <%= active_work %>"><a href="#workvisa"  data-toggle="tab">WORK VISA</a></li>
+			<% end %>
+			<% if @visa_student.any? %>
+				<% if active.nil? %>
+					<% active = true %>
+					<% active_student = 'active' %>
+				<% end %>
+				<li class="tab-head <%= active_student %>"><a href="#studenvisa"  data-toggle="tab">STUDENT VISA</a></li>
+			<% end %>
+		</ul>
+
+		<!-- render partial -->
+		<div class="span17 tab-content no-back" style="border:3px solid #1b325e; border-radius: 5px;margin-left:-2px;">
+			<% if @visa_tourist.any? %>
+				<%= render :partial => "layouts/singlevisa", :locals => { :info => @visa_tourist, :active => active_tourist, :id => 'touristvisa' } %>
+			<% end %>
+			<% if @visa_business.any? %>
+				<%= render :partial => "layouts/singlevisa", :locals => { :info => @visa_business, :active => active_business, :id => 'businessvisa' } %>
+			<% end %>
+			<% if @visa_official.any? %>
+				<%= render :partial => "layouts/singlevisa", :locals => { :info => @visa_official, :active => active_official, :id => 'officialvisa' } %>
+			<% end %>
+			<% if @visa_work.any? %>
+				<%= render :partial => "layouts/singlevisa", :locals => { :info => @visa_work, :active => active_work, :id => 'workvisa' } %>
+			<% end %>
+			<% if @visa_student.any? %>
+				<%= render :partial => "layouts/singlevisa", :locals => { :info => @visa_student, :active => active_student, :id => 'studentvisa' } %>
+			<% end %>
+		</div>
+
+		<% end %>
+	</div>
+
+</div>	
+
+<!-- 	<div class="span2 visa-side-margin">
+		<h5>Non-Government Website</h5>
+		<p>We are private passport and visa expedited courier service. We are not a government passport agency and do not issue passports and visa directly. Government Forms are available for FREE on the US State Department Website. To insure we are able to expedite your passport as requested, we will also assist you with filling out the proper forms and gathering the supporting documentation.</p>
+		<h5>DISCLAIMER</h5>
+		<p>Non-U.S. passport holders must send a copy of your green card or valid U.S. visa with valid I-94 card. Fees and processing times for non-U.S. passport holders may vary from the published fees above. Please include The Passport &amp; Visa Company order form to ensure proper handling of your visa request.	Consular fees subject to change without notice.</p>
+
+		
+		
+
+
+	</div> -->
+	
+ 
+<script>
+  $(function () {
+    $( &#039;#myTab a:last&#039; ).tab('show');
+  })
+</script>

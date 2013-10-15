@@ -1,0 +1,381 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+*/
+
+
+  a {
+  	color:#1b325e;
+  }
+
+  div.tab-content.no-back {
+    border:2px solid #1b325e;
+  }
+
+  h2 { 
+    /*font-size: 20px;*/
+  }
+
+  .nav {
+  	/*background-color:#1b325e ;*/
+  	width:100%;
+  	padding:0px 0px 0px 0px;
+    margin-bottom: 0px;
+  }
+
+  .span13 {
+    width:290px;
+    /*padding:20px 20px;*/
+    margin-right: 40px;
+    margin-top:20px;
+   /* border: 1px dashed #1b325e;*/
+    border-radius: 10px;
+  }
+
+  .span14 {
+    width: 180px;
+  }
+
+  .span15 {
+    width:485px;
+  }
+
+  .span16 {
+    width:1050px;
+  }
+
+  .span17 {
+    width:1020px;
+  }
+
+  .span18 {
+    width: 110px;
+   /* margin:0px;*/
+  }
+
+  .span19 {
+    width:800px;
+  }
+
+  .span20 {
+    width:290px;
+    
+  }
+
+  .wide-button {
+    min-width: 260px;
+  }
+
+  .double-wide-button {
+    display: inline-block;
+    *display: inline;
+    /* IE7 inline-block hack */
+    border-radius: 4px;
+    *zoom: 1;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+   font-size: 28px;
+   font-weight: 300;
+   padding: 20px 35px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    border: 2px solid #4c83bf;
+    background-color: #1b325e;
+    width:100%;
+    
+  }
+
+  .nav-pills > li > a {
+  	color:#fff;
+  	font-size: 20px;
+    font-family: "proxima-nova",sans-serif;
+    font-weight: 100;
+  	text-transform: uppercase;
+  	border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    /*margin-left: 10px;*/
+    /*padding-bottom: 15px;*/
+    padding: 18px 25px 18px 25px;
+    /*padding-top: 15px;*/
+  }
+
+.nav-pills .dropdown-menu {
+  border-radius: 0px;
+}
+
+.dropdown-menu {
+  margin:0px;
+  border-radius-bottom:3px;
+  /*min-width:230px;*/
+}
+
+
+
+ul.dropdown-menu {
+  
+  box-shadow: none;
+  background-color: #1B325E;
+
+
+  padding:0px;
+}
+
+.dropdown-menu > li > a {
+  color:#ffffff;
+  font-size: 18px;
+  text-align: left;
+  padding:15px 30px 15px 30px;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    text-decoration: none;
+    color:#ffffff;
+    background-color: #1B325E;
+   
+    }
+
+.container {
+  padding:0px;
+
+}
+
+a.dropdown-toggle .active {
+  background-color: #1B325E;
+}
+.nav-pills .open .dropdown-toggle {
+   background-color: #4c83bf;
+}
+
+.dropdown-menu > li > a:hover {
+  /*background-color: #f1f1f1;*/
+}
+
+
+  .nav-pills > .active > a > h4, .nav-pills > .active > a:hover > h4, .nav-pills > .active > a:focus > h4 {
+    background-color: #4c83bf;
+    color: #FFFFFF;
+  }
+
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: #4c83bf;
+  
+}
+
+li a:hover h4, li a:active h4, li a:focus h4  {
+  color: #FFFFFF;
+}
+
+li {
+	list-style: none;
+}
+
+.tabs-left > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+  margin:0;
+ /* border-radius: 4px;*/
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+ /* background-color: #fff;*/
+}
+
+
+.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+    /*background-color: #c5c6c8;*/
+}
+
+
+
+.btn {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #4c83bf;
+ /* background-image: -moz-linear-gradient(top, #ffffff, #1B325E);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#1B325E));
+  background-image: -webkit-linear-gradient(top, #ffffff, #1B325E);
+  background-image: -o-linear-gradient(top, #ffffff, #1B325E);
+  background-image: linear-gradient(to bottom, #ffffff, #1B325E);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #1B325E #1B325E #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #1B325E;*/
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+ /* filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}*/
+}
+.btn-primary {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #4c83bf;
+  background-image: linear-gradient(to bottom, #4c83bf, #4c83bf);
+ /* background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #0044cc #0044cc #002a80;*/
+ /* border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;*/
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #4c83bf;
+  
+}
+.btn-primary:active,
+.btn-primary.active {
+/*  background-color: #003399 \9;*/
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+  /*color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;*/
+}
+.btn:active,
+.btn.active {
+  background-color: #fff \9;
+}
+.btn:first-child {
+  *margin-left: 0;
+}
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  text-decoration: none;
+  background-position: 0 -15px;
+  /*-webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;*/
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn.active,
+.btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity:1;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.tab-content {
+    overflow: auto;
+    background-color: #f8f8f8 ;
+    padding:20px;
+    border:1px solid #4c83bf;
+   /* border-radius: 5px;*/
+
+    
+}
+
+.nav-tabs > li > a {
+    border-top: 3px solid #4c83bf;
+    border-right: 3px solid #4c83bf;
+    border-left: 3px solid #4c83bf;
+   /* border-radius: 4px 4px 0 0;*/
+    background-color: #f8f8f8;
+   /* line-height: 20px;*/
+    /*padding-bottom: 8px;*/
+    /*padding-top: 8px;*/
+    line-height: 25px;
+    border:1px solid #4c83bf;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    -moz-border-bottom-colors: 3px solid #4c83bf;
+    -moz-border-left-colors: 3px solid #4c83bf;
+    -moz-border-right-colors: 3px solid #4c83bf;
+    -moz-border-top-colors: 3px solid #4c83bf;
+    background-color: #4c83bf;
+    border-color: #4c83bf;
+    border-image: none;
+    border-style: solid;
+    border-width: 3px;
+    color: #ffffff;
+    cursor: default;
+  }
+
+.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+-moz-box-shadow: inset 0 0 5px -2px #000;
+  -webkit-box-shadow: inset 0 0 5px -2px #000;
+  box-shadow: inset 0 0 5px -2px #000;
+
+}
+
+.tabs-left > .nav-tabs > li > a {
+    margin-right: -1px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

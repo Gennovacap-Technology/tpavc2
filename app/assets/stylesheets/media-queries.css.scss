@@ -1,0 +1,39 @@
+
+@media  (min-width: 1200px) { 
+
+}
+
+/****************END MEDIA QUERY*******************/
+
+@media  (min-width: 768px) and (max-width: 979px) { 	
+	.passport-main {
+		display: inline-block;
+		width:180px;
+		margin-right: 0px;
+	}
+
+}
+
+/****************END MEDIA QUERY*******************/
+
+@media  (max-width: 767px) {
+	.passport-main {
+		display: inline-block;
+		width:180px;
+		margin-right: 0px;
+	}
+
+}
+
+/****************END MEDIA QUERY*******************/
+ 
+ @media  (max-width: 480px) { 
+ 	.passport-main {
+		display: inline-block;
+		width:180px;
+		margin-right: 0px;
+	}
+
+}
+
+

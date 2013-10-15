@@ -1,0 +1,242 @@
+<div class="row">
+	<div class="span12 main-row-padding">
+		<div class="span">
+			<div class="download-passport main-image-margin visible-desktop"></div>
+		</div>
+		<div class="span8">
+			<div class="span7 line-break">
+				<h1 class="light-bold">U.S. PASSPORT DOWNLOADS</h1>
+				<h2 class="light-bold">All Passport Documents Available for Download </h2>
+				<h3>To apply for a U.S. passport, download a the appropriate passport package. The package has all the PDF documents you need for each type of passport. <!-- If you’re not sure which document or download package you need, send us an <%= link_to "email", contact_path, :title => "Send us an email", :class => "highlight" %> or chat live. --></h3>
+				
+				<h2></h2>
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+
+	<div class="span12 second-row-padding">
+		
+			
+			
+					<div class="span13">
+						<!-- <div class="new-passports-large"></div> -->
+						<div class="passport-content">	
+							<h3 class="medium-border"><%= link_to "New Adult Passport", newadultpassport_path, :title => "Get a New U.S. Adult Passport", :class => "light-bold white" %></h3>
+							<h4 class="light-bold">Requirements:</h4>
+							<ul class="no-margin passport-box">
+								<li class="list-squares">If you are a first time passport applicant;</li>
+								<li class="list-squares">Your passport was issued before the age of 15;</li>
+								<li class="list-squares">Your passport was issued more than 15 years ago;</li>
+								<li class="list-squares">Your expired passport is not in your possession;</li>
+								<li class="list-squares">Your current valid passport is damaged.</li>
+							</ul>
+							
+							<p>
+								<%= link_to "New Adult Passport Documents", asset_path("US-Passport-Adult-New.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+							</p> 
+						</div>
+					</div>	
+						
+					<div class="span13">	
+						<!-- <div class="renewal-passports-large"></div> -->
+						<div class="passport-content">
+							<h3 class="medium-border"><%= link_to "Passport Renewal", renewpassport_path, :title => "Passport Renewal", :class => "light-bold  white"  %></h3>
+							<h4 class="light-bold">Requirements:</h4>
+							<ul class="no-margin passport-box">
+								<li class="list-squares">You already have a passport that is not damaged;</li>
+								<li class="list-squares">&amp; your passport was issued within the last 15 years;</li>
+								<li class="list-squares">&amp; you were over 16 at the time it was issued;</li>
+								<li class="list-squares">&amp; you have not changed your legal name;</li>
+								<li class="list-squares">or you changed your legal name &amp; can prove it.</li>
+							</ul>
+							
+							<p>
+								<%= link_to "Passport Renewal Documents", asset_path("US-Passport-Renewal.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+							</p> 
+						</div>
+							
+					</div>
+						<div class="span13">
+						<!-- <div class="new-passports-large"></div> -->
+						<div class="passport-content">	
+							<h3 class="medium-border"><%= link_to "New Minor Passport", newminorpassport_path, :title => "Get a New U.S. Minor Passport", :class => "light-bold  white" %></h3>
+							<h4 class="light-bold">Requirements:</h4>
+							<ul class="no-margin passport-box">
+									
+									<li class="list-squares">Be under the age of 16 years old</li>
+	 								<li class="list-squares">Have the permission from either the parent(s) or legal guardian(s) </li>
+									<li class="list-squares">Be able to appear in person with your parent(s) or legal guardian(s) at your local Acceptance Agency.</li>
+	
+							</ul>
+							
+							<p>
+								<%= link_to "New Minor Passport Documents", asset_path("US-Passport-Minor-New.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+							</p> 
+						</div>
+					</div>
+					<div class="span13">	
+							<!-- <div class="name-change-passports-large"></div> -->
+							<div class="passport-content">
+								<h3 class="medium-border"><%= link_to "Name Change", namepassport_path, :title => "Name Change on Your Passport", :class => "light-bold  white"  %></h3>
+								<h4 class="light-bold">Requirements:</h4>
+								<ul class="no-margin passport-box">
+									<li class="list-squares">If you have changed your legal name since your last passport was issued;</li>
+									<li class="list-squares">and the passport's issue date is within one (1) year;</li>
+									<li class="list-squares">otherwise renew your passport.</li>
+								</ul>
+								
+								<p>
+									<%= link_to "Name Change Documents", asset_path("US-Passport-Name-Change.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+								</p>
+							</div>
+							
+						</div>
+
+					
+				
+					<div class="span13">
+						<!-- <div class="add-pages-passports-large"></div> -->
+						<div class="passport-content">
+							<h3 class="medium-border"><%= link_to "Add Visa Pages", addpagespassport_path, :title => "Add Pages to Your Passport", :class => "light-bold  white"  %>
+							</h3>
+							<h4 class="light-bold">Requirements:</h4>
+							<ul class="no-margin passport-box-two">
+									<li class="list-squares">Your current valid passport has run out of pages;</li>
+									<li class="list-squares">and the passport expiration date is at least 1 year away;</li>
+									<li class="list-squares">otherwise apply for passport renewal.</li>
+								</ul>
+							
+							<p>
+								<%= link_to "Add Pages Documents", asset_path("US-Passport-Additional-Visa-Pages.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+							</p>
+						</div>	 						
+					</div>	
+					<div class="span13">		
+						<!-- <div class="lost-or-damaged-passports-large"></div> -->
+						<div class="passport-content">
+							<h3 class="medium-border"><%= link_to "Lost or Stolen Passport", lostpassport_path, :title => "Lost or Stolen Passport", :class => "light-bold  white"  %>
+							</h3>
+							<h4 class="light-bold">Requirements:</h4>
+								<ul class="no-margin passport-box-two">
+										<li class="list-squares">Apply to replace your lost or stolen passport only if the missing passport is still valid. </li>
+										<li class="list-squares">If the missing passport has expired, apply for a new passport.</li>
+								</ul>
+							
+							<p>
+								<%= link_to "Lost Passport Documents", asset_path("US-Passport-Lost-Stolen.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+							</p>
+						</div>
+					</div>	
+					<div class="span13">		
+							<!-- <div class="second-passports-large"></div> -->
+							<div class="passport-content">
+								<h3 class="medium-border"><%= link_to "Secondary Passport", secondpassport_path, :title => "Get a Second Passport", :class => "light-bold  white"  %>
+								</h3>
+								<h4 class="light-bold">Requirements:</h4>
+								<ul class="no-margin passport-box-two">
+									<li class="list-squares">Issued at the discretion of U.S. Department of State to frequent travelers that do not have time to acquire visas between trips; </li>
+									<li class="list-squares">or for security reasons.</li>
+								</ul>
+								
+								<p>
+									<%= link_to "Second Passport Documents", asset_path("US-Passport-Secondary.pdf"), :class => "btn btn-primary wide-button", :target => "_blank" %>
+								</p> 
+							</div>
+						</div>	
+
+</div>
+<!-- <div class="row">
+	<div class="span4">
+		
+		<div class="span3">
+			<div class="first-line-break">
+				<h2 class="light-bold">NEW PASSPORT </h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">If you are a first time passport applicant;</li>
+					<li class="list-squares">Your prior passport was issued before the age of 15;</li>
+					<li class="list-squares">Your passport was issued more than 15 years ago;</li>
+					<li class="list-squares">Your expired passport is not in your possession;</li>
+					<li class="list-squares">Your current valid passport is damaged.</li>
+				</ul>
+				<br />
+				<%= link_to "NEW PASSPORT DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+					<br />
+			</div>
+		</div>
+		<div class="span3">
+			<div class="line-break">
+				<h2 class="light-bold">RENEW PASSPORT</h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">You already have a passport that is not damaged;</li>
+					<li class="list-squares">and your passport was issued within the last 15 years;</li>
+					<li class="list-squares">and you were over 16 at the time it was issued;</li>
+					<li class="list-squares">and you have not changed your legal name;</li>
+					<li class="list-squares">or you changed your legal name and can prove it.</li>
+				</ul>
+				<br />
+				<%= link_to "RENEW PASSPORT DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="line-break">
+				<h2 class="light-bold">NAME CHANGE</h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">If you have changed your legal name since your last passport was issued;</li>
+					<li class="list-squares">and the passport's issue date is within one (1) year;</li>
+					<li class="list-squares">otherwise renew your passport.</li>
+				</ul>
+				<br />
+				<%= link_to "NAME CHANGE DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="line-break">
+				<h2 class="light-bold">ADD PAGES</h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">Your current valid passport has run out of pages;</li>
+					<li class="list-squares">and the passport expiration date is at least 1 year away;</li>
+					<li class="list-squares">otherwise apply for passport renewal.</li>
+				</ul>
+				<br />
+				<%= link_to "ADD PAGES DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="line-break">
+				<h2 class="light-bold">2nd PASSPORT</h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">Issued at the discretion of U.S. Department of State
+to frequent travelers that do not have time to acquire visas between trips; </li>
+					<li class="list-squares">or for security reasons.</li>
+				</ul>
+				<br />
+				<%= link_to "SECOND PASSPORT DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="line-break">
+				<h2 class="light-bold">LOST PASSPORT</h2>
+				<h4 class="light-bold">Requirements:</h4>
+				<ul style="margin:0px;">
+					<li class="list-squares">Apply to replace your lost or stolen passport only if the missing passport is still valid. </li>
+					<li class="list-squares">If the missing passport has expired, apply for a new passport.</li>
+				</ul>
+			<br />
+			<%= link_to "LOST PASSPORT DOWNLOADS", "#", :class => "btn btn-primary b-float-left downloads-button" %>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+</div>	
+ -->

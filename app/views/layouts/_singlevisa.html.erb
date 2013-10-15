@@ -1,0 +1,92 @@
+<% info.each do |i| %>
+<div class='tab-pane no-back padding-tab <%= active %>' id='<%= id %>'>
+<div class="row">
+	<div class="span5">	
+		<table class="visa-main-margin">
+			<tr>
+				<td  class="large one">Country:</td>
+				<td  class="large"><%= i.country.name %></td>
+			</tr>
+			<tr>
+				<td class="large one">Citizenship:</td>
+				<td class="large"><%= i.citizenship %></td>
+			</tr>
+			<tr>
+				<td class="large one">Visa Type:</td>
+				<td class="large"><%= i.visa_type %></td>
+			</tr>
+			<tr>
+				<td class="large one">Visa Required:</td>
+				<td class="large"><%= i.visa_required %></td>
+			</tr>
+			<tr>
+				<td class="large one">Maximum Stay:</td>
+				<td class="large"><%= i.maximum_stay %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="span5">
+		<h3 class="visa-main-margin light-bold under">Travel Alerts / Special Notes:</h3>
+		<div class="visa-text">
+			<% if i.travel_warnings.empty? %>
+				No alerts or special notes.
+			<% else %>
+				<%= i.travel_warnings.html_safe %>
+			<% end %>
+		</div>
+	</div>
+</div>	
+
+
+
+
+
+	<table class="visa-double-margin">
+	
+			<tr class="t-border">
+				<td class="med t-border">ENTRY TYPE</td>
+				<td class="med t-border">MAX VALIDITY</td>
+				<td class="med t-border">PROCESSING TIME</td>
+				<td class="med t-border">EMBASSY FEE</td>
+				<td class="med t-border">SERVICE FEE</td>
+				<td class="med t-border">TOTAL FEE</td>
+			</tr>
+
+			<% if i.visa_entries.any? %>
+				<% i.visa_entries.each do |e| %>
+				<tr class="t-border">
+					<td class="small t-border"><%= e.type_of_entry %></td>
+					<td class="small t-border"><%= "Up to " + e.maximum_validity.to_s + " days" %></td>
+					<td class="small t-border"><%= e.processing_time.to_s + " days" %></td>
+					<td class="small t-border">$<%= e.embassy_fees %></td>
+					<td class="small t-border">$<%= e.service_fees %></td>
+					<td class="small t-border">$<%= e.embassy_fees + e.service_fees %></td>
+				</tr>
+				<% end %>
+			<% else %>
+				<tr>
+					<td class="small t-border">No entries.</td>
+				</tr>
+			<% end %>
+	</table>
+
+	<h3 class="visa-main-margin light-bold under">Download Your Visa Document Packages:</h3>
+	<div>
+		<% i.assets.each do |a| %>
+			<div class="pdf_file">
+				<%= image_tag "jszip.png", {height: 60, width: 60} %>
+				<%= link_to a.pdf_real_name, download_pdf_path(:id => a.id), {:target => '_new', :class => ""} %>
+			</div>
+		<% end %>
+	</div>
+	
+	<h3 class="visa-main-margin light-bold under">Instructions for Visa Application:</h3>
+	<div class="visa-text">
+		<% if i.requirements.empty? %>
+			No requirements.
+		<% else %>
+			<%= i.requirements.html_safe %>
+		<% end %>
+	</div>
+</div>
+<% end %>

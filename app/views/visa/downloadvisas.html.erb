@@ -1,0 +1,158 @@
+
+
+<div class="row">
+	<div class="span12 main-row-padding">
+		<div class="span">
+			<div class="visa-stamp main-image-margin visible-desktop"></div>
+		</div>
+		<div class="span8">
+			<div class="span7 line-break">
+				<h1 class="light-bold"><span class="highlight">VISA</span> DOWNLOADS</h1>
+				<h2 class="light-bold">All Visa Documents Available for Download </h2>
+				<h3>To apply for a visa, download a visa package for U.S. citizen or foreign national. The packages contain all the PDF documents you need for a visa application.<!--  If you’re not sure which download package you need, send us an <%= link_to "email", contact_path, :title => "Send us an email", :class => "highlight" %>. --></h3>
+				<h2></h2>
+			</div>
+		</div>		
+	</div>
+</div>
+
+<!-- <div class="row line-break">
+		<div class="span12">
+			
+		</div>
+	</div>	
+ -->
+
+
+	<div class="span12">
+		
+			<div class="span10">
+				<h2 class="light-bold" style=""><span class="highlight">Visa</span> Downloads for United States Citizens</h2>
+				<!-- <p>Not sure which visa you need? Find your visa with our app.</p> -->
+			</div>
+
+	<div class="span11">
+	
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Tourist Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_document_t.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "document"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Business Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_document_b.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "document"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Official visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_document_o.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "document"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Student Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_document_s.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "document"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Work Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_document_w.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "document"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+	
+		</div>
+
+		<div class="line-break"></div>	
+
+		<div class="span10">
+				<h2 class="light-bold" style=""><span class="highlight">Visa</span> Downloads for Foreign Nationals (Non-US Citizens)</h2>
+				<!-- <p>Not sure which visa you need? Find your visa with our app.</p> -->
+			</div>
+
+	<div class="span11">
+
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Tourist Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_supplement_t.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "supplement"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Business Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_supplement_b.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "supplement"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Official Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_supplement_o.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "supplement"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Student Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_supplement_s.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "supplement"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="span14 download-visas">
+					<h4 class="light-bold under">Work Visa</h4>
+					<ul class="no-margin">
+						<% @passport_visa_supplement_w.each do |p| %>
+							<li>
+								<%= link_to p.country.name, download_package_path(:id => p.id, :document => "supplement"), {:target => '_new'} %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+
+		</div>
+	</div>
+
+
+
+<div class="row line-break">
+		<div class="span12">
+			
+		</div>
+	</div>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visa</title>
+
+ <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Lato:300,400,700,300italic,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+  </script>
+
+<script type="text/javascript">
+  (function() {
+    var config = {
+      kitId: 'oau2zbv',
+      scriptTimeout: 3000
+    };
+    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application.js" %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+
+<div id="main-background">
+<div class="container main-content">
+
+	<!-- Maybe, the company name can be here -->
+	<div class="row" style="margin-top:30px;margin-bottom:30px;">
+		<div class="span4">
+			<div class="logo"></div>
+		</div>
+		<div class="span4 t-align-center  extra-margin visible-desktop">	
+			<h4>UNITED STATES TOLL FREE</h4>
+			<h4 class="bolder">+1.888.551.0091</h4>
+		</div>
+		<div class="span3">
+			<div class="span3">
+				<div class="span3 t-align-left telephone-margin visible-desktop">		
+					<h4>AUSTIN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +1.512.469.5909</h4>
+					<h4>DALLAS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +1.214.390.3517</h4>
+				<!-- 	<h4>DENVER  &nbsp; &nbsp; &nbsp; &nbsp;  +1.303.468.3300</h4> -->
+					<h4>HOUSTON &nbsp; &nbsp;   +1.713.568.4646</h4>	
+				</div>	
+			</div>
+		</div>		
+	</div>
+
+	<div class="row">
+		<div class="span12">
+
+			<ul class="nav back-navigation nav-pills main-texture">
+					<li class="<%= 'active' if current_page?(root_path) %>" class="dropdown">
+						<%= link_to "Home", root_path, :title => "Home Page" %>
+					</li>
+					<li class="dropdown" class="<%= 'active' if current_page?(passport_path) %>">
+						  <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+						 <%= link_to "PASSPORTS", passport_path, :title => "Passports", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
+
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						  		<li><%= link_to "See All Passports", downloadpassports_path, :title => "Download Passport Documents" %></li>
+						  		<li><%= link_to "New U.S. Adult Passport", newadultpassport_path, :title => "Get a New U.S. Adult Passport - Fast" %></li>
+						  		<li><%= link_to "New U.S. Minor Passport", newminorpassport_path, :title => "Get a New U.S. Minor Passport - Fast" %></li>
+						  		<li><%= link_to "U.S. Passport Renewal", renewpassport_path, :title => "Passort Renewal" %></li>
+								<li><%= link_to "Name Change Passport", namepassport_path, :title => "Change Name on a Passport" %></li>
+								<li><%= link_to "Secondary Limited Passport", secondpassport_path, :title => "Get a 2nd Passport" %></li>
+								<li><%= link_to "Lost or Stolen Passport", lostpassport_path, :title => "Lost or Stolen Passport" %></li>
+								<li><%= link_to "Additional Visa Pages", addpagespassport_path, :title => "Add Pages to a Passport" %></li>
+						  </ul>
+					</li>
+					<li class="<%= 'active' if current_page?(visas_path) %>">
+						<%= link_to "Visas", visas_path, :title => "Visas" %>
+					</li>
+					<li class="dropdown" class="<%= 'active' if current_page?(solutions_path) %>">
+						<%= link_to "Corporate Clients", solutions_path, :title => "Corporate Clients", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<li><%= link_to "Corporate Solutions", solutions_path, :title => "Corporate Solutions" %></li>
+							<li><%= link_to "Global Entry Program", globalentryprogram_path, :title => "Global Entry Program" %></li>
+						</ul>
+
+					</li>
+					<li class="dropdown" class="<%= 'active' if current_page?(downloadvisas_path) %>">
+						  <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+						 <%= link_to "DOCUMENTS", downloadvisas_path, :title => "Documents", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
+
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						  		<li><%= link_to "All Visa Documents", downloadvisas_path, :title => "Download Visa Documents" %></li>
+						  		<li><%= link_to "All Passport Documents", downloadpassports_path, :title => "Download Passport Documents" %></li>
+						  	
+						  </ul>
+					</li>
+
+
+					
+					<li class="<%= 'active' if current_page?(faqs_path) %>">
+						<%= link_to "FAQS", faqs_path, :title => "FAQS" %>
+					</li>
+					<li class="<%= 'active' if current_page?(contact_path) %>">
+						<%= link_to "Contact", contact_path, :title => "Contact" %>
+					</li>
+					<!-- <form class="navbar-form pull-right">
+						 <input type="text" style="margin-top:10px;margin-right:10px;" class="search-query" placeholder="Search">
+					</form> -->
+			</ul>
+			
+		</div>
+		
+	</div>
+	
+
+	<%= yield %>
+
+	
+	
+	<!-- <div class="row">	
+		<div class="span7">
+			<div class="span3">
+				<%= link_to "", solutions_path, :title => "Corporate Solutions", :class => "corporate-solutions" %>
+			</div>
+			<div class="span3" style="margin-left:70px;">
+				<div class="secure-services visible-desktop" style="margin:0px;"></div>
+			</div>
+		</div>	
+			
+				<div class="span5" style="padding:18px 0px;  border-radius:4px;">
+							
+							<a href="http://www.bbb.com" target="_blank"><div class="bbb"></div></a>
+							<a href="http://www.austinchamber.com" target="_blank"><div class="austin-chamber"></div></a>
+				</div>	
+			
+	</div> -->
+	<div class="row">
+		<div class="span12">
+			<div class="footer-main-area main-texture">
+				<div class="row">
+					<h1 class="white bold extra-margin footer-text t-align-center">FAST, SECURE, &amp; PROFESSIONAL DOCUMENT PROCESSING</h1>
+				</div>	
+				<div class="row">
+					<div class="span12">
+						<div class="span6">
+							<div itemscope itemtype="http://schema.org/Corporation">
+								<h3> 
+									<a itemprop="url" href="">
+										<h4 style="line-height:30px;color:#fff;" itemprop="name"> 
+											THE PASSPORT &amp; <span class="highlight">VISA</span> COMPANY
+										</h4>
+									</a>
+								</h3>		
+									<div style="font-size:16px;color:#fff; line-height:26px;" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+										<span class="address" itemprop="streetAddress">
+											4005 Banister Lane, Bldg. C 
+										</span> 
+										<span itemprop="addressLocality">
+											Austin
+										</span> 
+										<span itemprop="postalCode">
+											78704
+										</span> 
+									</div>
+									<div style="font-size:12px;text-align:justify;color:#fff;min-width:100px; margin-bottom:50px;" itemprop="description">
+										The Passport and Visa Company is based in Austin with operations in Houston, Dallas, and Denver.  We are an expedited passportrenewal and expedited visa service with 24 hour turnaround for passports and visas for US Citizens and Foreign Nationals.
+									</div>
+							</div>	
+						</div>
+						<div class="span5" style="margin-top:10px;margin-left:100px;">
+							<div class="row">
+								
+								<div class="span2 b-float-right">
+									<a href="http://www.bbb.com" target="_blank"><div class="bbb b-float-right"></div></a>
+									<a href="http://www.austinchamber.com" target="_blank"><div class="austin-chamber b-float-right"></div></a>
+								</div>
+						
+								<div class="span2 b-float-right">
+									<div class="credit-cards b-float-right"></div>
+									<a href="http://www.lifelock.com" target="_blank">
+										<div class="lifelock b-float-right"></div>
+									</a>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+</div>	
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<div class="span4">
+
+	<%= link_to image_tag("fedex.png")  %>	
+	<h3 class="">Generate a Fedex Shipping Label</h3>
+	
+	<!-- <h4 class="light-bold">Enter your information below get a Fedex label</h4> -->
+	<br />
+	<%= notice %>
+
+	<%= form_for @label, :url => {:action => "send_label"} do |f| %>
+
+		<%= f.text_field(:name, :class => "span4", :placeholder => "Name") %>
+		<%= display_label_error(:name) %>
+
+		<%= f.text_field(:company, :class => "span4", :placeholder => "Company") %>
+		<%= display_label_error(:company) %>
+
+		<%= f.text_field(:phone_number, :class => "span4", :placeholder => "Phone Number") %>
+		<%= display_label_error(:phone_number) %>
+
+		<%= f.text_field(:address, :class => "span4", :placeholder => "Address") %>
+		<%= display_label_error(:address) %>
+
+		<%= f.text_field(:city, :class => "span4", :placeholder => "City") %>
+		<%= display_label_error(:city) %>
+		
+		<%= f.select(:state, options_for_select(State.order("name ASC").all.collect{ |u| [u.name, u.iso] }), :class => "span4") %>
+		<%= display_label_error(:state) %>
+
+		<%= f.text_field(:postal_code, :class => "span4", :placeholder => "Postal Code") %>
+		<%= display_label_error(:postal_code) %>
+
+		<%= f.hidden_field(:action_name, {:value => controller.action_name}) %>
+		<br /><br /><br />
+		<%= f.submit("Generate Label", :class => "btn btn-primary b-float-right") %>
+
+	<% end %>
+</div>

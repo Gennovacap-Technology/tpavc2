@@ -1,0 +1,30 @@
+<div class="span4">
+	<h4 class="light-bold">Upload Your Passport Application for Review</h4>
+	<%= notice %>
+
+	<%= form_for @renew, :url => {:action => "send_renew"}, :html => { :multipart => true } do |f| %>
+
+		<%= f.text_field(:full_name, :class => "span3", :placeholder => "Full Name") %>
+		<%= display_renew_error(:full_name) %>
+
+		<%= f.text_field(:email, :class => "span3", :placeholder => "E-mail") %>
+		<%= display_renew_error(:email) %>
+
+		<%= f.file_field(:pdf1) %>
+		<%= display_renew_error(:pdf1) %>
+
+		<%= f.file_field(:pdf2) %>
+		<%= display_renew_error(:pdf2) %>
+
+		<%= f.file_field(:pdf3) %>
+		<%= display_renew_error(:pdf3) %>
+		
+		<%= f.file_field(:pdf4) %>
+		<%= display_renew_error(:pdf4) %>
+
+		<%= f.hidden_field(:action_name, {:value => controller.action_name}) %>
+
+		<%= f.submit("Send", :class => "btn btn-primary b-float-right") %>
+
+	<% end %>
+</div>

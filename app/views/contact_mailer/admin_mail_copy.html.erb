@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Visa Company</title>
+  </head>
+  <body>
+    <h1>Hello, admin!</h1>
+    <p>
+      <%= @form.name %> just sent you a contact form.
+    </p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td><%= @form.name %></td>
+        </tr>
+        <tr>
+          <td>E-mail:</td>
+          <td><%= @form.email %></td>
+        </tr>
+        <tr>
+          <td>Company:</td>
+          <td><%= @form.company %></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><%= @form.phone %></td>
+        </tr>
+        <tr>
+          <td>Website:</td>
+          <td><%= @form.website %></td>
+        </tr>
+        <tr>
+          <td>Number Of Employees:</td>
+          <td><%= @form.number_of_employees %></td>
+        </tr>
+        <tr>
+          <td>Time to reach:</td>
+          <td><%= @form.time_to_reach %></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

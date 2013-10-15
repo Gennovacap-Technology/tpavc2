@@ -1,0 +1,5 @@
+desc "Proccess the email in a background job"
+
+task :process_email do
+
+end

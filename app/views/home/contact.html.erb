@@ -1,0 +1,78 @@
+
+	<div class="span12 main-row-padding">
+		<div class="span12">
+			<h1 class="light-bold">CONTACT THE PASSPORT  &AMP; <span class="highlight">VISA</span> COMPANY  </h1>
+			<h2>Passport Questions - Visa Questions - Corporate Solutions Inquiries</h2>
+		</div>
+	</div>
+
+
+
+<div class="span12 second-row-padding">
+		<div class="span7">
+			<div class="map-border">
+				<iframe width="100%" height="332" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=The+Passport+and+Visa+Company,+West+5th+Street,+Austin,+TX&amp;aq=0&amp;oq=the+pas&amp;sll=30.307761,-97.753401&amp;sspn=0.982849,1.582031&amp;ie=UTF8&amp;hq=The+Passport+and+Visa+Company,&amp;hnear=W+5th+St,+Austin,+Texas&amp;t=m&amp;cid=8368347058076703731&amp;ll=30.283678,-97.754374&amp;spn=0.032612,0.054846&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+			</div>
+		</div>	
+	
+	<div class="span4">
+		<div class="span3 contact-border no-margin">
+			<h2 class="">Contact an Agent</h2>
+			<%= notice %>
+			<%= form_for @contact, :url => {:action => "send_contact"} do |f| %>
+				
+				<%= f.text_field(:name, :class => "span3", :placeholder => "Name") %>
+				<%= display_contact_error(:name) %>
+
+				<%= f.text_field(:company, :class => "span3", :placeholder => "Company") %>
+				<%= display_contact_error(:company) %>
+
+				<%= f.text_field(:email, :class => "span3", :placeholder => "Email") %>
+				<%= display_contact_error(:email) %>
+
+				<%= f.text_field(:phone, :class => "span3", :placeholder => "Phone") %>
+				<%= display_contact_error(:phone) %>
+
+				<%= f.text_field(:website, :class => "span3", :placeholder => "Website") %>
+				<%= display_contact_error(:website) %>
+
+			
+				<input type="hidden" name="form_name" value="contact" />
+
+				<br/>
+				<%= f.submit("Contact Us Now", :class => "btn btn-primary b-float-right") %>			
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="span12 second-row-padding" style="color:#1B325E;">
+	<div class="span3 offset1">
+		<h3>Headquarters Address</h3>
+			<li>4005 Banister Lane - Three Park Place</li>
+			<li>Suite 195C, Austin, TX 78704</li>
+	</div>	
+	<div class="span2">
+		<h3>Austin</h3>
+			<li>+1.512.469.5909</li>
+			<li>+1.888.551.0019</li>
+	</div>
+	<div class="span2">		
+		<h3>Dallas</h3>
+			<li>+1.214.390.3517</li>
+			<li>+1.888.551.0019</li>
+	</div>
+	<div class="span1">	
+		<h3>Houston</h3>
+			<li>+1.713.568.4646</li>
+			<li>+1.888.551.0019</li>
+	</div>
+</div>
+
+
+	
+
+		
+
+
+

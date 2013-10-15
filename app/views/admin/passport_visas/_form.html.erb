@@ -1,0 +1,60 @@
+<%= semantic_form_for [:admin, @passport_visa] do |f| %>
+  
+  <%= f.semantic_errors *f.object.errors.keys %>
+  <%= f.inputs "Main information" do %>
+			<%= f.input :country %>
+			<%= f.input :citizenship, :as => :radio, :collection => {"US Citizen" => 0, "Foreign National" => 1} %>
+			<%= f.input :visa_type, :as => :select, :collection => ["Tourist", "Business", "Official"] %>
+			<%= f.input :visa_required, :label => "Is Visa Required?", :as => :radio, :collection => {"Required" => 0, "Not Required" => 1} %>
+			<%= f.input :maximum_stay, :label => "Maximum Stay" %>
+  <% end %>
+
+  <fieldset class="actions">
+  	<ol>
+  		<li class="action input_action" id="passport_visa_add_new_entry">
+  			<input name="new_entry" type="button" value="Add New Entry">
+  		</li>
+  		<li class="action input_action" id="passport_visa_remove_entry">
+  			<input name="remove_entry" type="button" value="Remove Entry">
+  		</li>
+  	</ol>
+  </fieldset>
+
+  <!-- Problem -->
+  <%= f.inputs "Entries" do %>
+  	<%= f.has_many :visa_entries, :sortable => :priority do |entry| %>
+			<%= entry.input :type_of_entry, :as => :select, :collection => ["Testing"] %>
+		<% end %>
+	<% end %>
+
+  <%= f.actions %>
+
+<% end %>
+
+<script>
+	$(function(){
+		var add_entry 		= $("#passport_visa_add_new_entry input"),
+				remove_entry 	= $("#passport_visa_remove_entry input"),
+				submitForm		= $("#passport_visa_submit_action input");
+
+		add_entry.on('click', function(){
+			var count_entry 	= $(".replicate").length;
+			if(count_entry < 5) {
+				$(".replicate").first().clone().insertAfter('.replicate:last');	
+			}
+		});
+
+		remove_entry.on('click', function(){
+			var count_entry 	= $(".replicate").length;
+			if(count_entry > 1) {
+				$(".replicate:last").remove();	
+			}
+		});
+
+		submitForm.on('click', function(){
+			// Validates the custom fields
+			return false;
+		});
+
+	})();
+</script>
