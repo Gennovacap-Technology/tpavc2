@@ -13,7 +13,7 @@ class VisaController < ApplicationController
 		# Country
 		@country = Country.find_by_shortname(@destination)
 
-		# Visas
+		# Visas:country => @country.shortname,
 		@visa_all       = PassportVisa.includes([:assets, :country]).uniq.where(:country_id => @country.id, :citizenship => @citizenship).count
 		if @visa_all > 0
 			@visa_tourist   = PassportVisa.includes([:assets, :country]).uniq.where(:visa_type => 'Tourist', :country_id => @country.id, :citizenship => @citizenship)

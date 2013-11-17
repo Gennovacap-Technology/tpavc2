@@ -4,6 +4,5 @@ class AddShortNameToCountries < ActiveRecord::Migration
   end
 
   def down
-  	remove_column :countries, :shortname
   end
 end

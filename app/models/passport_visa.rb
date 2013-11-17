@@ -10,6 +10,7 @@ class PassportVisa < ActiveRecord::Base
   attr_accessor :document_package, :supplemental_package
   validates_presence_of :country_id, :citizenship, :visa_type, :visa_required, :maximum_stay
   validates :travel_warnings, :length => { :maximum => 500 }
+  validates :maximum_stay, :inclusion => 1..1000
 
   before_create :check_exists
 

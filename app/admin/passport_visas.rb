@@ -57,7 +57,7 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 						end
 					end
 				else
-					No PDFs
+					p "No PDFs"
 				end
 			end
 			###################
@@ -74,7 +74,9 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 						end
 					end
 				else
-					No PDFs
+					p do 
+						"No PDFs" 
+					end
 				end
 			end
 		end
@@ -106,7 +108,7 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			f.input :citizenship, :as => :radio, :collection => ["US Citizen", "Foreign National"]
 			f.input :visa_type, :as => :select, :collection => ["Tourist", "Business", "Official", "Work", "Student"]
 			f.input :visa_required, :label => "Is Visa Required?", :as => :radio, :collection => ["Required", "Not Required"]
-			f.input :maximum_stay, :label => "Maximum Stay"
+			f.input :maximum_stay, :label => "Maximum Stay", :as => :string, :input_html => { :maxlength => 3 }
 		end
 
 		f.inputs "Entries" do

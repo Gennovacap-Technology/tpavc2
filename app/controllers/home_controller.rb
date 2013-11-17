@@ -32,9 +32,9 @@ class HomeController < ApplicationController
     destination  = params[:destination]
 
     # Country
-    @country = Country.find(destination)
+    country = Country.find(destination)
 
-    redirect_to visa_path(:country => @country.shortname, :state => state, :citizenship => citizenship)
+    redirect_to visa_path(:country => country.shortname, :state => state, :citizenship => citizenship)
   end
 
   def download_pdf
