@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Visa</title>
+  <%= display_meta_tags :site => 'The Passport and Visa Company' %>
 
  <script type="text/javascript">
   WebFontConfig = {
@@ -27,6 +27,9 @@
     var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
   })();
 </script>
+
+
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -68,9 +71,9 @@
 					<li class="<%= 'active' if current_page?(root_path) %>" class="dropdown">
 						<%= link_to "Home", root_path, :title => "Home Page" %>
 					</li>
-					<li class="dropdown" class="<%= 'active' if current_page?(passport_path) %>">
+					<li class="dropdown" class="<%= 'active' if current_page?(downloadpassports_path) %>">
 						  <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a> -->
-						 <%= link_to "PASSPORTS", passport_path, :title => "Passports", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
+						 <%= link_to "PASSPORTS", downloadpassports_path, :title => "Passports", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
 
 						  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 						  		<li><%= link_to "See All Passports", downloadpassports_path, :title => "Download Passport Documents" %></li>
@@ -86,10 +89,10 @@
 					<li class="<%= 'active' if current_page?(visas_path) %>">
 						<%= link_to "Visas", visas_path, :title => "Visas" %>
 					</li>
-					<li class="dropdown" class="<%= 'active' if current_page?(solutions_path) %>">
-						<%= link_to "Corporate Clients", solutions_path, :title => "Corporate Clients", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
+					<li class="dropdown" class="<%= 'active' if current_page?(passportandvisasolutions_path) %>">
+						<%= link_to "Corporate Clients", passportandvisasolutions_path, :title => "Corporate Clients", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"} %>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-							<li><%= link_to "Corporate Solutions", solutions_path, :title => "Corporate Solutions" %></li>
+							<li><%= link_to "Corporate Solutions", passportandvisasolutions_path, :title => "Corporate Solutions" %></li>
 							<li><%= link_to "Global Entry Program", globalentryprogram_path, :title => "Global Entry Program" %></li>
 						</ul>
 
@@ -130,7 +133,7 @@
 	<!-- <div class="row">	
 		<div class="span7">
 			<div class="span3">
-				<%= link_to "", solutions_path, :title => "Corporate Solutions", :class => "corporate-solutions" %>
+				<%= link_to "", passportandvisasolutions_path, :title => "Corporate Solutions", :class => "corporate-solutions" %>
 			</div>
 			<div class="span3" style="margin-left:70px;">
 				<div class="secure-services visible-desktop" style="margin:0px;"></div>
@@ -173,7 +176,7 @@
 										</span> 
 									</div>
 									<div style="font-size:12px;text-align:justify;color:#fff;min-width:100px; margin-bottom:50px;" itemprop="description">
-										The Passport and Visa Company is based in Austin with operations in Houston, Dallas, and Denver.  We are an expedited passportrenewal and expedited visa service with 24 hour turnaround for passports and visas for US Citizens and Foreign Nationals.
+										The Passport and Visa Company is based in Austin with operations in Houston, Dallas, and Denver.  We are an expedited passport renewal and expedited visa service with 24 hour turnaround for passports and visas for US Citizens and Foreign Nationals.
 									</div>
 							</div>	
 						</div>
