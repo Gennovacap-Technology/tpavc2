@@ -43,3 +43,7 @@ gem 'slim'
 gem 'unicorn'
 gem 'capistrano'
 gem 'rvm-capistrano'
+
+
+# SEO 
+gem 'meta-tags', '1.5.0', require: 'meta_tags'

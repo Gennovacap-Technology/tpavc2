@@ -5,7 +5,7 @@ Visa::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   # Passport routes
-  match 'passport' => 'passport#index', :as => :passport
+ # match 'passport' => 'passport#index', :as => :passport
   match 'passport/newadultpassport' => 'passport#newadultpassport', :as => :newadultpassport
   match 'passport/newminorpassport' => 'passport#newminorpassport', :as => :newminorpassport
   match 'passport/renewpassport' => 'passport#renewpassport', :as => :renewpassport
@@ -23,7 +23,7 @@ Visa::Application.routes.draw do
   match 'visa/download' => 'visa#downloadvisas', :as => :downloadvisas
 
   # Home routes
-  match 'solutions' => 'home#solutions', :as => :solutions
+  match 'passportandvisasolutions' => 'home#passportandvisasolutions', :as => :passportandvisasolutions
   match 'globalentryprogram' => 'home#globalentryprogram', :as => :globalentryprogram
   # match 'downloadvisas' => 'home#downloadvisas', :as => :downloadvisas
   # match 'downloadpassports' => 'home#downloadpassports', :as => :downloadpassports

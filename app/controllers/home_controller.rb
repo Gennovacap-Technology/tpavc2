@@ -1,11 +1,29 @@
 class HomeController < ApplicationController
 
   def index
+    # SEO
+    @page_title       = 'Expedited Passport Renewal Services Austin - Same Day Visa Houston & Dallas, TX | 1-888-GO-PASSPORT '
+    @page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. The Passport & Visa Company\'s works in conjunction with the U.S. State Department, U.S. Passport Agencies, Foreign Embassies and Consulates to speed up your travel documents.'
+    @page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, Expedited U.S. Passports, additional passport pages, childrens passport, passport name changes, second passport, lost passport, China Visa, India Visa, Russian Visa, Brazil Visa'
+    set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com'
   end
 
-  def solutions
+  def passportandvisasolutions
     @contact = Contact.new
+    # SEO
+    @page_title       = 'Customized Corporate Passport Solutions and Visa Solutions - Customized Passport and Visa Programs | Austin, Houston, Dallas '
+    @page_description = 'The Passport & Visa Company provides expedited passport solutions and visa solutions for corporations and businesses. The customized corporate solutions and account management services are great for large enterprises.'
+    @page_keywords    = 'Passport Solutions, Visa Solutions, Passport business solutions'
+    set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passportandvisasolutions'
   end
+
+  def globalentryprogram
+    # SEO
+    @page_title       = 'Global Entry Program | Austin, Houston, Dallas'
+    @page_description = 'The Passport & Visa Company provides assistance with the US state department\'s Global Entry Program.'
+    @page_keywords    = 'U.S Department of State Global Entry Program, Global Entry, Global Entry Program'
+    set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/globalentryprogram'
+  end 
 
   def search
     # Params
