@@ -21,27 +21,100 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 				row("Maximum Stay") {|visa| visa.maximum_stay}
 			end
 		end
-		panel "Entries" do
-			table_for visa.visa_entries do
-				column "Type Of Entry" do |entry|
-					entry.type_of_entry
+		div :class => "panel" do
+			h3 "Entries"
+			if visa.visa_entries and visa.visa_entries.count > 0
+				table do
+					thead do
+						tr do
+							th do
+								"Type Of Entry"
+							end
+							th do
+								"Maximum Validity"
+							end
+							th do
+								"Processing Time"
+							end
+							th do
+								"Embassy Fee"
+							end
+							th do
+								"Service Fee"
+							end
+							th do
+								"Total Cost"
+							end
+						end
+					end
+					tbody do
+						visa.visa_entries.each do |e|
+							tr do
+								td do 
+									e.type_of_entry
+								end
+								td do 
+									"up to #{e.maximum_validity} days"
+								end
+								td do
+									e.visafees.each do |v|
+										div do
+											"#{v.processing_time_from}-#{v.processing_time_to} business days"
+										end
+									end
+								end
+								td do
+									e.visafees.each do |v|
+										div do
+											"$#{v.embassy_fees}"
+										end
+									end
+								end
+								td do
+									e.visafees.each do |v|
+										div do
+											"$#{v.service_fees}"
+										end
+									end
+								end
+								td do
+									e.visafees.each do |v|
+										div do
+											"$#{v.embassy_fees + v.service_fees}"
+										end
+									end
+								end
+							end
+						end
+					end
 				end
-				column "Maximum Validity" do |entry|
-					"up to #{entry.maximum_validity} days"
-				end
-				column "Processing Time" do |entry|
-					"#{entry.processing_time} days"
-				end
-				column "Embassy Fees" do |entry|
-					"$#{entry.embassy_fees}"
-				end
-				column "Service Fees" do |entry|
-					"$#{entry.service_fees}"
-				end
-				column "Total Fees" do |entry|
-					"$#{entry.embassy_fees+entry.service_fees}"
-				end
+			else
+				"No Entries Available"
 			end
+			# table_for visa.visa_entries do
+			# 	column "Type Of Entry" do |entry|
+			# 		entry.type_of_entry
+			# 	end
+			# 	column "Maximum Validity" do |entry|
+			# 		"up to #{entry.maximum_validity} days"
+			# 	end
+			# 	column "Processing Time" do |entry|
+
+			# 	end
+			# 	column "Embassy Fees" do |entry|
+
+			# 	end
+			# 	column "Service Fees" do |entry|
+			# 		entry.visafees do |v|
+			# 			"From #{v.processing_time_from} to #{v.processing_time_to} days"
+			# 		end
+			# 	end
+			# 	column "Total Fees" do |entry|
+			# 		entry.visafees do |v|
+			# 			"From #{v.processing_time_from} to #{v.processing_time_to} days"
+			# 		end
+			# 	end
+			# end
 		end
 		panel "Uploads" do
 			if visa.citizenship == "US Citizen"
@@ -115,9 +188,13 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			f.has_many :visa_entries do |ff|
 				ff.input :type_of_entry, :as => :select, :collection => ["Single Entry", "Multiple Entry"]
 				ff.input :maximum_validity
-				ff.input :embassy_fees
-				ff.input :service_fees
-				ff.input :processing_time
+				# add the fields here
+				ff.has_many :visafees do |fff|
+					fff.input :embassy_fees
+					fff.input :service_fees
+					fff.input :processing_time_from
+					fff.input :processing_time_to
+				end
 			end
 		end
 

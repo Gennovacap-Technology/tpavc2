@@ -57,10 +57,34 @@
 				<tr class="t-border">
 					<td class="small t-border"><%= e.type_of_entry %></td>
 					<td class="small t-border"><%= "Up to " + e.maximum_validity.to_s + " days" %></td>
-					<td class="small t-border"><%= e.processing_time.to_s + " days" %></td>
-					<td class="small t-border">$<%= e.embassy_fees %></td>
-					<td class="small t-border">$<%= e.service_fees %></td>
-					<td class="small t-border">$<%= e.embassy_fees + e.service_fees %></td>
+					<td class="small t-border">
+						<% e.visafees.each do |f| %>
+							<div>
+								<%= "#{f.processing_time_from}-#{f.processing_time_to} business days" %>
+							</div>
+						<% end %>
+					</td>
+					<td class="small t-border">
+						<% e.visafees.each do |f| %>
+							<div>
+								<%= "$#{f.embassy_fees}" %>
+							</div>
+						<% end %>
+					</td>
+					<td class="small t-border">
+						<% e.visafees.each do |f| %>
+							<div>
+								<%= "$#{f.service_fees}" %>
+							</div>
+						<% end %>
+					</td>
+					<td class="small t-border">
+						<% e.visafees.each do |f| %>
+							<div>
+								<%= "$#{f.embassy_fees + f.service_fees}" %>
+							</div>
+						<% end %>
+					</td>
 				</tr>
 				<% end %>
 			<% else %>

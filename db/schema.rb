@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524180947) do
+ActiveRecord::Schema.define(:version => 20131118163810) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -85,11 +85,18 @@ ActiveRecord::Schema.define(:version => 20130524180947) do
     t.integer  "passport_visa_id"
     t.string   "type_of_entry"
     t.integer  "maximum_validity"
-    t.integer  "embassy_fees"
-    t.integer  "service_fees"
-    t.integer  "processing_time"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "visafees", :force => true do |t|
+    t.integer  "visa_entry_id"
+    t.integer  "embassy_fees"
+    t.integer  "service_fees"
+    t.integer  "processing_time_from"
+    t.integer  "processing_time_to"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
 end
