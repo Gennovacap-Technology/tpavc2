@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  embassy_fees: MyString
+  service_fees: MyString
+  processing_time: MyString
+
+two:
+  embassy_fees: MyString
+  service_fees: MyString
+  processing_time: MyString
