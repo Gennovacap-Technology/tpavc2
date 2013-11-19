@@ -91,30 +91,6 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			else
 				"No Entries Available"
 			end
-			# table_for visa.visa_entries do
-			# 	column "Type Of Entry" do |entry|
-			# 		entry.type_of_entry
-			# 	end
-			# 	column "Maximum Validity" do |entry|
-			# 		"up to #{entry.maximum_validity} days"
-			# 	end
-			# 	column "Processing Time" do |entry|
-
-			# 	end
-			# 	column "Embassy Fees" do |entry|
-
-			# 	end
-			# 	column "Service Fees" do |entry|
-			# 		entry.visafees do |v|
-			# 			"From #{v.processing_time_from} to #{v.processing_time_to} days"
-			# 		end
-			# 	end
-			# 	column "Total Fees" do |entry|
-			# 		entry.visafees do |v|
-			# 			"From #{v.processing_time_from} to #{v.processing_time_to} days"
-			# 		end
-			# 	end
-			# end
 		end
 		panel "Uploads" do
 			if visa.citizenship == "US Citizen"
@@ -206,6 +182,12 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 		f.inputs "Requirements for Mailing in Documents" do
 			f.input :travel_warnings, :as => :text, :input_html => {:rows => 5}
 			f.input :requirements, :as => :ckeditor, :input_html => {:class => "ckeditor"}
+		end
+
+		f.inputs "SEO" do
+			f.input :meta_title
+			f.input :meta_keywords, :label => "Meta Keywords (comma separated)"
+			f.input :meta_description
 		end
 
 		f.actions
