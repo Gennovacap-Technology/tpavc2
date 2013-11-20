@@ -34,8 +34,8 @@
 <script>
 	$(function(){
 		var add_entry 		= $("#passport_visa_add_new_entry input"),
-				remove_entry 	= $("#passport_visa_remove_entry input"),
-				submitForm		= $("#passport_visa_submit_action input");
+			remove_entry 	= $("#passport_visa_remove_entry input"),
+			submitForm		= $("#passport_visa_submit_action input");
 
 		add_entry.on('click', function(){
 			var count_entry 	= $(".replicate").length;
@@ -55,6 +55,8 @@
 			// Validates the custom fields
 			return false;
 		});
+
+
 
 	})();
 </script>

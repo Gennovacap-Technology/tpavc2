@@ -41,7 +41,7 @@ function validate_file(file) {
 
 }
 
-$(function(){
+$(document).ready(function(){
 
 	$(".has_many > h3").remove(); // Remove the unnecessary H3 tag from the has_many entries
 
@@ -49,7 +49,10 @@ $(function(){
 	var documental    		= $('#visa_document_package_input'),
 		documental_input 	= $("#visa_citizenship_us_citizen"),
 		supplemental  		= $('#visa_supplemental_package_input'),
-		supplemental_input 	= $("#visa_citizenship_foreign_national");
+		supplemental_input 	= $("#visa_citizenship_foreign_national"),
+		visaFee				= $("div.visafees a.button");
+
+	visaFee.html("Add Visa Fee");
 
 	if(documental_input.is(':checked')) {
 		supplemental.hide();
@@ -82,4 +85,4 @@ $(function(){
 
 	});
 
-})();
+});
