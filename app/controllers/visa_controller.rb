@@ -13,6 +13,12 @@ class VisaController < ApplicationController
 		# Country
 		@country = Country.find_by_shortname(@destination)
 
+		# Setup the SEO
+		@page_title       = "The Passport and Visa Company expedites #{@country.name} visas and visa applications to #{@country.name}. #{@country.name} tourist visa, #{@country.name} business visa, #{@country.name} work visa, #{@country.name} official visa, #{@country.name} student visa, #{@country.name} work visa.  | Austin, Houston, Dallas"
+		@page_description = "The Passport and Visa Company expedites #{@country.name} visas and visa applications to #{@country.name}. #{@country.name} tourist visa, #{@country.name} business visa, #{@country.name} work visa, #{@country.name} official visa, #{@country.name} student visa, #{@country.name} work visa.  | Austin, Houston, Dallas"
+		@page_keywords    = "#{@country.name} tourist visa, #{@country.name} business visa, #{@country.name} work visa, #{@country.name} official visa, #{@country.name} student visa, #{@country.name} work visa"
+
+
 		# Visas:country => @country.shortname,
 		@visa_all       = PassportVisa.includes([:assets, :country]).uniq.where(:country_id => @country.id, :citizenship => @citizenship).count
 		if @visa_all > 0

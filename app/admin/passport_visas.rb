@@ -184,12 +184,6 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			f.input :requirements, :as => :ckeditor, :input_html => {:class => "ckeditor"}
 		end
 
-		f.inputs "SEO" do
-			f.input :meta_title
-			f.input :meta_keywords, :label => "Meta Keywords (comma separated)"
-			f.input :meta_description
-		end
-
 		f.actions
 
 	end
