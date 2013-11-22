@@ -6,18 +6,18 @@ development:
   username: Nemesis
   password:
 
-# test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: visa_test
-#   pool: 5
-#   username: Rafael
-#   password:
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: visa_test
+  pool: 5
+  username: Rafael
+  password:
 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: visa_production
-#   pool: 5
-#   username: deploy
-#   password: Reza2thetop
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: tpavc_production
+  pool: 5
+  username: deploy
+  password: Reza2thetop
