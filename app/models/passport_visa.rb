@@ -8,7 +8,7 @@ class PassportVisa < ActiveRecord::Base
 
   attr_accessible :visa_entries_attributes, :assets_attributes, :countries_attributes, :country_id, :citizenship, :visa_type, :visa_required, :maximum_stay, :requirements, :travel_warnings, :document_package, :supplemental_package
   attr_accessor :document_package, :supplemental_package
-  validates_presence_of :country_id, :citizenship, :visa_type, :visa_required, :maximum_stay, :meta_title, :meta_description, :meta_keywords
+  validates_presence_of :country_id, :citizenship, :visa_type, :visa_required, :maximum_stay, :page_title, :meta_description, :meta_keywords
   validates :travel_warnings, :length => { :maximum => 500 }
   validates :maximum_stay, :inclusion => 1..1000
 
