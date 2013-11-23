@@ -106,5 +106,12 @@ Visa::Application.routes.draw do
   match "vietnam" => redirect("/")
   match "visa" => redirect("/visa")
 
+  #Redirect ("non-www" to "wwww")
+  # config/routes.rb
+  constraints(:host => "thepassportandvisacompany.com") do
+    match "(*x)" => redirect { |params, request|
+      URI.parse(request.url).tap { |x| x.host = "www.thepassportandvisacompany.com" }.to_s
+    }
+end
   
 end
