@@ -10,11 +10,23 @@ class PassportController < ApplicationController
 	def newadultpassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		 @page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		 @page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		 @page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	 set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/newadultpassport'
 	end
 
 	def newminorpassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		 @page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		 @page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		 @page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	 set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/newminorpassport'
 	end
 
 	def newpassport
@@ -23,26 +35,56 @@ class PassportController < ApplicationController
 	def secondpassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		@page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		@page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		@page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/secondpassport'
 	end
 
 	def lostpassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		@page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		@page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		@page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/lostpassport'
 	end
 
 	def namepassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		@page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		@page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		@page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/namepassport'
 	end
 
 	def addpagespassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		@page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		@page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		@page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/addpagespassport'
 	end
 
 	def renewpassport
 		@renew = Renew.new
 		@label = Label.new
+
+		#SEO
+		@page_title       = 'Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages | Austin, Tx Houston, Tx & Dallas, TX'
+   		@page_description = 'The Passport & Visa Company provides expedited passport renewal and same day visa services. Expedited Passport Renewal, Additional Passport Pages, New Children Passport, New Minor Passport, New Adult Passport, Name Change Passport, Secondary Passport, Add Visa Pages  '
+   		@page_keywords    = 'us passport service, expedited passport, us passports, expedited passport renewal, expedited passport services, new adult passport, new us passport, new expedited passport, passport renewal, renewal of passport, renew passport us, usa renew passport, passport renewal austin, passport renewal, new passport, renew us passport, renewal of passport, additional passport pages, adding passport pages, add pages to passport expedited, children passport, childrens passport, children passport renewal, children passports, children passport photos, united states passport name change, passport name change marriage, change of name on passport, passport name changes, how to change name on passport, get a second passport, second passport, apply for second passport, duplicate passport, second passport us, stolen passport, lost passport, passport replacement, lost or stolen passport, lost passport united states'
+    	set_meta_tags :canonical => 'http://www.thepassportandvisacompany.com/passport/renewpassport'
 	end
 
 	def send_renew
