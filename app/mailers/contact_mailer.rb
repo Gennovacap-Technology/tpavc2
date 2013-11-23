@@ -8,6 +8,6 @@ class ContactMailer < ActionMailer::Base
 
   def admin_mail_copy(form)
   	@form = form
-  	mail(:to => "gennovacap.sandbox@gmail.com", :subject => "Contact from the visa website")
+  	mail(:to => "info@tpavc.com", :subject => "Contact from the visa website")
   end
 end
