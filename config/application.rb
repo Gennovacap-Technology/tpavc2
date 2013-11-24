@@ -60,7 +60,7 @@ module Visa
     config.assets.initialize_on_precompile = false
 
     #set default mailer for production server on Heroku
-    config.action_mailer.default_url_options = { :host => "http://www.thepassportandvisacompany.com" }
+    config.action_mailer.default_url_options = { :host => "http://www.thepassportandvisacompany.com/" }
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

@@ -97,7 +97,7 @@ class PassportController < ApplicationController
 			RenewMailer.renew_mail(@renew).deliver
 			
 			flash[:notice] = "Your form was sent with success!"
-			redirect_to "#{action}_path"
+			redirect_to "/#{action}"
 		else
 			render :action => action
 		end
