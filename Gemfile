@@ -38,6 +38,7 @@ gem 'fedex'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'redis'
 
 # Deployment
 gem 'unicorn'

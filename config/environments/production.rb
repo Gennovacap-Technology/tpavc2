@@ -26,6 +26,8 @@ Visa::Application.configure do
   config.action_mailer.delivery_method        = :smtp
   config.action_mailer.perform_deliveries     = true
 
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

@@ -288,6 +288,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rake
   rb-fsevent
+  redis
   rubyzip
   rvm-capistrano
   sass-rails (>= 2.1.6)

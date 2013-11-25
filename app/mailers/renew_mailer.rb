@@ -19,7 +19,7 @@ class RenewMailer < ActionMailer::Base
   	end
 
   	# Mail to pauline@tpavc.com if in production
-  	mail(:to => "rafael.fragoso@gennovacap.com", :subject => "Renewal Request")
+  	mail(:to => "info@tpavc.com", :subject => "Renewal Request")
   end
 
 end
