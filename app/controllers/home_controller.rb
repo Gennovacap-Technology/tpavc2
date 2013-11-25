@@ -37,6 +37,10 @@ class HomeController < ApplicationController
     redirect_to visa_path(:country => country.shortname, :state => state, :citizenship => citizenship)
   end
 
+  def sitemap
+
+  end  
+
   def download_pdf
     # Find the asset
     @asset  = Asset.find(params[:id])

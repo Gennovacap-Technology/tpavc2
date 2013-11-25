@@ -40,6 +40,9 @@ Visa::Application.routes.draw do
   # Search
   match 'search' => 'home#search', :as => :search
 
+  # Sitemap
+  match 'sitemap' => 'home#sitemap', :as => :sitemap
+
   #301 Redirects from the old site
 
   match "aboutus.html" => redirect("/")

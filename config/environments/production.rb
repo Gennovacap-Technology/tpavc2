@@ -28,6 +28,11 @@ Visa::Application.configure do
 
   ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'
 
+  #Google Analytics 
+
+  GA.tracker = "UA-xxxxxx-x"
+  GA.script_source = "('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'"
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

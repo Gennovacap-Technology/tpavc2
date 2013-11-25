@@ -47,4 +47,4 @@ gem 'redis'
 
 # SEO 
 gem 'meta-tags', '1.5.0', require: 'meta_tags'
-gem 'sitemap'
+gem 'google-analytics-rails'
