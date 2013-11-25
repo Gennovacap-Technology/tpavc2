@@ -86,10 +86,10 @@ class HomeController < ApplicationController
 
   def send_contact
     if params[:form_name] == "contact"
-      pathname   = contact_path
+      pathname   = '/contact'
       actionname = 'contact'
     else
-      pathname   = solutions_path
+      pathname   = '/passportandvisasolutions'
       actionname = 'solutions'
     end
 

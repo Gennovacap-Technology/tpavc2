@@ -4,15 +4,13 @@ class Contact
 	include ActiveModel::Conversion
 	extend ActiveModel::Naming
 
-	attr_accessor :name, :company, :email, :phone, :website, :number_of_employees, :time_to_reach
+	attr_accessor :name, :company, :email, :phone, :website
 
 	validates_presence_of :name, 
 						:company, 
 						:email, 
 						:phone, 
-						:website, 
-						:number_of_employees, 
-						:time_to_reach
+						:website
 
 	validates_format_of :email, 
 						:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i,
