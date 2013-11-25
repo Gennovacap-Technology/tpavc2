@@ -50,6 +50,18 @@ Here's the /admin login credentials by default:
 **Password: password**
 
 
+SEO Sitemap
+-----------
+
+To generate the Sitemap, you must to edit the `config/sitemap.rb` file. Here's the documentation link for instructions:
+
+-	[Documentation][1]
+
+[1]: <http://rubydoc.info/gems/sitemap/0.3.3/frames>
+
+Every time you edit the sitemap.rb file, you must to generate the sitemap again and ping the search engines!!!!
+
+
 
 Problems?
 ---------

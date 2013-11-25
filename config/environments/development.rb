@@ -28,6 +28,8 @@ Visa::Application.configure do
     :enable_starttls_auto => true  
   }
 
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
