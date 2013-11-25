@@ -169,7 +169,7 @@
 					    	<div class="pretty-images-content">
 					    		<%= link_to image_tag("ds822-thumb.png"), image_path("ds822-large.png"), {:rel => "prettyPhoto[one]", :title => ""} %>
 					    		<%= link_to image_tag("ds821-thumb.png"), image_path("ds821-large.png"), {:rel => "prettyPhoto[one]", :title => ""} %>
- 					    		<%= #link_to image_tag("affadavit-thumb.png"), image_path("affadavit-large.png"), {:rel => "prettyPhoto[one]", :title => ""} %>
+ 					    		
 					    	</div>
 					    	<!-- End Pretty Photo -->
 
@@ -218,10 +218,7 @@
 					    	</ol>
 
 					    	<!-- Pretty Photo -->
-					    	<!-- <div class="pretty-images-content">
-					    		<%= #link_to image_tag("driverslicense-thumb.png"), image_path("driverslicense-large.png"), {:rel => "prettyPhoto[four]", :title => ""} %>
-					    		<%= #link_to image_tag("naturalization-thumb.png"), image_path("naturalization-large.png"), {:rel => "prettyPhoto[four]", :title => ""} %>
-					    	</div> -->
+					    	
 					    	<!-- End Pretty Photo -->
 					    	
 					    </div>
@@ -284,12 +281,12 @@
 					    <div class="tab-pane" id="tab9">
 					    	<h3>Quality Check </h3>
 					    	<ol>
-								<%= #render :partial => "layouts/uploadform_passport" %>
+								<%= render :partial => "layouts/uploadform_passport" %>
 					    	</ol>
 					    </div>
 
 					    <div class="tab-pane" id="tab10">
-								<%= #render :partial => "layouts/generate_label" %>
+								<%= render :partial => "layouts/generate_label" %>
 					    </div>
 				  	</div>
 				  </div>

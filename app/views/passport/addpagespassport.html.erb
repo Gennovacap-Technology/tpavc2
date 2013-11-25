@@ -159,9 +159,7 @@
 					    	</ol>
 
 					    	<!-- Pretty Photo -->
-					    	<!-- <div class="pretty-images-content">
-					    		<%= #link_to image_tag(""), image_path(""), {:rel => "prettyPhoto[one]", :title => ""} %>
-					    	</div> -->
+					    	
 					    	<!-- End Pretty Photo -->
 
 					    </div>
@@ -188,9 +186,7 @@
 							</ol>
 
 							<!-- Pretty Photo -->
-					    <!-- 	<div class="pretty-images-content">
-					    		<%= #link_to image_tag("passportphotos-thumb.png"), image_path("passportphotos-large.png"), {:rel => "prettyPhoto[three]", :title => ""} %>
-					    	</div> -->
+					   
 					    	<!-- End Pretty Photo -->
 
 					    </div>
@@ -246,11 +242,11 @@
 					    <div class="tab-pane" id="tab9">
 					    	<h3>Quality Check </h3>
 					    	<ol>
-								
+								<%= render :partial => "layouts/uploadform_passport" %>
 					    	</ol>
 					    </div>
 					    <div class="tab-pane" id="tab10">
-							
+							<%= render :partial => "layouts/generate_label" %>
 					    </div>
 				  	</div>
 				  </div>
