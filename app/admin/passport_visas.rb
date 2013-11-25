@@ -181,7 +181,7 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 
 		f.inputs "Requirements for Mailing in Documents" do
 			f.input :travel_warnings, :as => :text, :input_html => {:rows => 5}
-			f.input :requirements, :as => :ckeditor, :input_html => {:class => "ckeditor"}
+			f.input :requirements, as: :html_editor
 		end
 
 		f.action :submit, :label => "Create Visa", :button_html => { :class => "lagoon" }

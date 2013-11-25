@@ -28,7 +28,7 @@ gem 'sass-rails', '>= 2.1.6'
 
 # Administration Gems
 gem 'rubyzip'
-gem 'ckeditor'
+gem 'active_admin_editor'
 gem 'country-select', :git => 'https://github.com/jamesds/country-select.git'
 gem 'activeadmin'
 gem 'meta_search',    '>= 1.1.0.pre'
