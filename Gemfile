@@ -48,3 +48,6 @@ gem 'redis'
 # SEO 
 gem 'meta-tags', '1.5.0', require: 'meta_tags'
 gem 'google-analytics-rails'
+
+# S3 File Upload
+gem 'aws-sdk'

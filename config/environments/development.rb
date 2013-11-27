@@ -28,6 +28,9 @@ Visa::Application.configure do
     :enable_starttls_auto => true  
   }
 
+  ENV['S3_BUCKET_NAME'] = "tpavc-dev"
+  AWS.config(access_key_id: 'AKIAITIQAVYBNAOSQFJQ', secret_access_key: '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', region: 'sa-east-1')
+
   ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'
 
   # Print deprecation notices to the Rails logger

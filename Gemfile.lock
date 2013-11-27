@@ -74,6 +74,10 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
+    aws-sdk (1.28.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.1)
     bourbon (3.1.8)
       sass (>= 3.2.0)
@@ -244,6 +248,7 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -253,6 +258,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_editor
   activeadmin
+  aws-sdk
   coffee-rails
   country-select!
   fedex

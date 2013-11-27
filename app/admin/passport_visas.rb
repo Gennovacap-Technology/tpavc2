@@ -203,29 +203,23 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			flash[:error] = "The file doesn't exist."
 			redirect_to session[:return_to]
 		else
-			# Delete the file from the system
-			assets_path = "#{Rails.root}/public/files"
-			path  			= File.join(assets_path, @asset.pdf_name)
+			# Download the file from the system
+			s3        	= AWS::S3.new
+			b         	= s3.buckets[ENV['S3_BUCKET_NAME']]
+			file 		= b.objects[@asset.pdf_name]
+
+			# delete from S3
+			file.delete
 			
-			if File.exist?(path)
-				if File.delete(path)
-					@asset.destroy
-					flash[:notice] = "The File was deleted successfully!"
-					redirect_to session[:return_to]
-				else
-					flash[:error] = "This file can't be deleted!"
-					redirect_to session[:return_to]
-				end
-			else
-				@asset.destroy
-				flash[:notice] = "The File was deleted successfully!"
-				redirect_to session[:return_to]
-			end
+			@asset.destroy
+			flash[:notice] = "The File was deleted successfully!"
+			redirect_to session[:return_to]
 		end
 
 	end
 
 	member_action :download do
+
 		# Save the previous URL
 		session[:return_to] = request.referer
 
@@ -236,11 +230,15 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			flash[:error] = "The file doesn't exist."
 			redirect_to session[:return_to]
 		else
-			# Delete the file from the system
-			assets_path = "#{Rails.root}/public/files"
-			path  			= File.join(assets_path, @asset.pdf_name)
-			
-			send_file path, :type => 'application/pdf', :x_sendfile => true
+			# Download the file from the system
+			s3        	= AWS::S3.new
+			b         	= s3.buckets[ENV['S3_BUCKET_NAME']]
+			file 		= b.objects[@asset.pdf_name]
+
+			require 'open-uri'
+			url = file.url_for(:read).to_s
+			data = open(url).read
+			send_data data, :disposition => 'attachment', :filename=>"#{@asset.pdf_real_name}.pdf"
 		end
 	end
 

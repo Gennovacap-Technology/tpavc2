@@ -50,11 +50,15 @@ class HomeController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     end
 
-    # Path to the file
-    file    = File.join("#{Rails.root}/public/files", @asset.pdf_name)
+    # Download the file from the system
+    s3          = AWS::S3.new
+    b           = s3.buckets[ENV['S3_BUCKET_NAME']]
+    file        = b.objects[@asset.pdf_name]
 
-    # Download link
-    send_file file, :type => 'application/pdf', :disposition => 'attachment', :filename => "#{@asset.pdf_real_name}.pdf"
+    require 'open-uri'
+    url = file.url_for(:read).to_s
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"#{@asset.pdf_real_name}.pdf", :type => "application/pdf"
   end
 
   def download_package
@@ -72,11 +76,31 @@ class HomeController < ApplicationController
 
     # Compile the files
     temp = Tempfile.new("zip-file-#{Time.now}")
+    # Zip::ZipOutputStream.open(temp.path) do |z|
+    #   @files.assets.each do |f|
+    #     # Download the file from the system
+    #     s3          = AWS::S3.new
+    #     b           = s3.buckets[ENV['S3_BUCKET_NAME']]
+    #     file        = b.objects[f.pdf_name]
+
+    #     require 'open-uri'
+    #     url = file.url_for(:read).to_s
+    #     data = open(url).read
+
+    #     z.put_next_entry("#{f.pdf_real_name}.pdf")
+    #     z.print IO.read(data.write)
+    #   end
+    # end
+
+    s3     = AWS::S3.new
+    b      = s3.buckets[ENV['S3_BUCKET_NAME']]
     Zip::ZipOutputStream.open(temp.path) do |z|
       @files.assets.each do |f|
-        path = File.join("#{Rails.root}/public/files", f.pdf_name)
-        z.put_next_entry("#{f.pdf_real_name}.pdf")
-        z.print IO.read(path)
+        file = b.objects[f.pdf_name]
+        file.read do |chunk|
+          z.put_next_entry("#{f.pdf_real_name}.pdf")
+          z.print IO.write("#{f.pdf_real_name}.pdf", chunk)
+        end
       end
     end
 
