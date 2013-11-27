@@ -5,7 +5,7 @@ class VisaController < ApplicationController
 
 	def visa
 		# Params
-		citizenship_type = {'us-citizen' => 'US Citizen', 'foreign-citizen' => 'Foreign Citizen'}
+		citizenship_type = {'us-citizen' => 'US Citizen', 'foreign-citizen' => 'Foreign National'}
 		@citizenship  = citizenship_type[params[:citizenship]]
 		@state        = params[:state]
 		@destination  = params[:country]
