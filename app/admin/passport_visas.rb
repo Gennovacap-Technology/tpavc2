@@ -207,12 +207,18 @@ ActiveAdmin.register PassportVisa, :as => "Visa" do
 			assets_path = "#{Rails.root}/public/files"
 			path  			= File.join(assets_path, @asset.pdf_name)
 			
-			if File.delete(path)
+			if File.exist?(path)
+				if File.delete(path)
+					@asset.destroy
+					flash[:notice] = "The File was deleted successfully!"
+					redirect_to session[:return_to]
+				else
+					flash[:error] = "This file can't be deleted!"
+					redirect_to session[:return_to]
+				end
+			else
 				@asset.destroy
 				flash[:notice] = "The File was deleted successfully!"
-				redirect_to session[:return_to]
-			else
-				flash[:error] = "This file can't be deleted!"
 				redirect_to session[:return_to]
 			end
 		end
