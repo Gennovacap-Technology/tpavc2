@@ -25,7 +25,10 @@ Visa::Application.configure do
   config.action_mailer.raise_delivery_errors  = true
   config.action_mailer.delivery_method        = :smtp
   config.action_mailer.perform_deliveries     = true
-
+  
+  ENV['DOWNLOADER_ID']      = "1881b10dd21f4ecd90b45145805e2691"
+  ENV['DOWNLOADER_SECRET']  = "3566590a340a43c9a900e36e71d31871"
+  ENV['DOWNLOADER_URL']     = "http://us.downloader.io"
   ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'
 
   #Google Analytics 
