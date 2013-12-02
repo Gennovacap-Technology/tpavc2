@@ -266,6 +266,7 @@ DEPENDENCIES
   growl
   guard!
   guard-livereload
+  httparty
   jquery-rails (= 2.3.0)
   json
   meta-tags (= 1.5.0)

@@ -28,7 +28,10 @@ Visa::Application.configure do
     :enable_starttls_auto => true  
   }
 
-  ENV['S3_BUCKET_NAME'] = "tpavc-dev"
+  ENV['S3_BUCKET_NAME']     = "tpavc-dev"
+  ENV['DOWNLOADER_ID']      = "1881b10dd21f4ecd90b45145805e2691"
+  ENV['DOWNLOADER_SECRET']  = "3566590a340a43c9a900e36e71d31871"
+  ENV['DOWNLOADER_URL']     = "http://us.downloader.io"
   AWS.config(access_key_id: 'AKIAITIQAVYBNAOSQFJQ', secret_access_key: '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', region: 'sa-east-1')
 
   ENV["REDISTOGO_URL"] = 'redis://redistogo:cb3c2a39a196400f774b982ca81d7fc0@grideye.redistogo.com:9506/'

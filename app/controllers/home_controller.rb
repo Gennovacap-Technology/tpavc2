@@ -92,20 +92,44 @@ class HomeController < ApplicationController
     #   end
     # end
 
-    s3     = AWS::S3.new
-    b      = s3.buckets[ENV['S3_BUCKET_NAME']]
-    Zip::ZipOutputStream.open(temp.path) do |z|
-      @files.assets.each do |f|
-        file = b.objects[f.pdf_name]
-        file.read do |chunk|
-          z.put_next_entry("#{f.pdf_real_name}.pdf")
-          z.print IO.write("#{f.pdf_real_name}.pdf", chunk)
-        end
-      end
-    end
+    # Zip::ZipOutputStream.open(temp.path) do |z|
+    #   @files.assets.each do |f|
+    #     file = b.objects[f.pdf_name]
+    #     file.read do |chunk|
+    #       z.put_next_entry("#{f.pdf_real_name}.pdf")
+    #       z.print IO.write("#{f.pdf_real_name}.pdf", chunk)
+    #     end
+    #   end
+    # end
 
     # Make the download request
-    send_file temp.path, :type => 'application/zip', :disposition => 'attachment', :filename => "#{@country.name}.zip"
+    #send_file temp.path, :type => 'application/zip', :disposition => 'attachment', :filename => "#{@country.name}.zip"
+
+    require 'open-uri'
+    require 'httparty'
+    require 'json'
+    s3                        = AWS::S3.new
+    b                         = s3.buckets[ENV['S3_BUCKET_NAME']]
+    download_manifest         = {
+      "name"  => @country.name.capitalize,
+      "files" => []
+    }
+
+    @files.assets.each do |f|
+      file = b.objects[f.pdf_name]
+      download_manifest['files'] << {path: "#{f.pdf_real_name}.pdf", url: file.url_for(:read).to_s}
+    end
+
+    options = {:headers => { 'Content-Type' => 'application/json' },
+              :basic_auth => {
+                :username => ENV['DOWNLOADER_ID'],
+                :password => ENV['DOWNLOADER_SECRET']
+              },
+              :body => download_manifest.to_json}
+
+    response = HTTParty.post("#{ENV['DOWNLOADER_URL']}/downloads", options)
+
+    redirect_to response['url']
   end
 
   def contact

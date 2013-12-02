@@ -51,3 +51,4 @@ gem 'google-analytics-rails'
 
 # S3 File Upload
 gem 'aws-sdk'
+gem 'httparty'
