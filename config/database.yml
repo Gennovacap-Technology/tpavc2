@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: visa_development
   pool: 5
-  username: rafael
+  username: Nemesis
   password:
 
 test:
