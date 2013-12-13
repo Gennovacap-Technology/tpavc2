@@ -124,18 +124,18 @@ class PassportController < ApplicationController
 			recipient = { 
 				:name => "Pauline Salzer",
 				:company => "The Passport and Visa Company",
-				:phone_number => "555-555-5555",
-				:address => "1145 w. 5th street Suite 307",
+				:phone_number => "512-469-5909",
+				:address => "4005C Banister Lane, Three Park Place - Suite 190C – Three Park Place",
 				:city => "Austin",
 				:state => "TX",
-				:postal_code => "78703",
+				:postal_code => "78704",
 				:country_code => "US",
 				:residential => "false" 
 			}
 
 			packages = []
 			packages << {
-				:weight => {:units => "LB", :value => 2},
+				:weight => {:units => "LB", :value => 0.5},
 				:dimensions => {:length => 10, :width => 5, :height => 4, :units => "IN" }
 			}
 
@@ -150,22 +150,35 @@ class PassportController < ApplicationController
 				:password => '4Ei8OGSgkTIiJDhf6wPTnQD6t',
 				:account_number => '510087623',
 				:meter => '118585714',
-				:mode => 'development'
+				:mode => ENV['FEDEX_ENV']
 			)
 
-			filename = "label#{Date.new.to_time.to_i}.pdf"
+			filename = "label#{Time.now.to_s}.pdf"
 
-			label = fedex.label(:filename => "public/#{filename}",
+			label = fedex.label(:filename => "tmp/#{filename}",
 					:shipper=>shipper,
 					:recipient => recipient,
 					:packages => packages,
 					:service_type => "FEDEX_GROUND",
 					:shipping_details => shipping_details)
 
+			s3        = AWS::S3.new
+		    b         = s3.buckets[ENV['S3_BUCKET_NAME']]
+		    o         = b.objects[filename]
+
+		    # Write the file
+		    o.write(:file => label.file_name)
+
 			# Schedule the file delete
 			LabelWorker.perform_in(5.minutes, filename)
 
-			redirect_to "/#{filename}"
+			# Download the file
+			# require 'open-uri'
+			# url  = o.url_for(:read).to_s
+			# data = open(url).read
+			# send_data data, :disposition => 'attachment', :filename=>"#{filename}.pdf"
+
+			redirect_to o.url_for(:read).to_s
 
 		else
 			render :action => action
